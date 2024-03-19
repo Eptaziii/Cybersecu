@@ -1,0 +1,20 @@
+<?php -> Sert à commencer une page php.
+require_once -> Sert à appeller un fichier comme par exemple (require_once 'src/header' qui va permettre de mettre le contenu du header)
+echo -> en php, affiche la valeur
+<form method="POST" action="recupConnexion.php"> -> Sert à récupérer des infos, 
+    method -> Comment récup (par exemple POST pour mettre dans un tableau "clé" "valeur")
+    action -> Indiquer dans quel fichier mettre ces infos
+<input type="text" name="nom"> -> Sert à entrer des valeurs par l'utilisateur
+    type -> Le type d'entré
+    name -> Le nom de la variable d'entré
+$_GET -> Tableau GET -> GET Sert à récupérer des infos dans l'URL
+$_POST -> Tableau POST -> POST Sert à récupérer des infos dans un formulaire
+var_dump($_POST) -> Affiche grossièrement les données d'une variable même tableaux
+<script>alert('Attaque XSS');</script> -> un script pour vérifier si une attaque est possible ou non et si la variable se nettoies
+filter_input -> commande qui sert à filtrer des valeurs entrées
+Attaque XSS -> Attaque qui se s'exécute à l'inssus de la personne
+
+Mdp -> Minimum de 12, Majuscule, minuscule, chiffre, caract spéc, non vide
+ATTENTION la sécu en html et js pour indiquer à l'utilisateur les pb, mais toujours protéger du côté serv
+
+preg_match('/\d/',$mdp);
