@@ -7,3 +7,8 @@ function errorMessage($text){
     $text
     </div>";
 }
+function successMessage($text){
+    echo "<div class=\"alert alert-success\" role=\"alert\">
+    $text
+    </div>";
+}

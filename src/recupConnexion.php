@@ -2,6 +2,7 @@
 echo 'recupConnexion<br />';
 $nom = filter_input(INPUT_POST,'login',FILTER_SANITIZE_STRING);
 $mdp = $_POST['mdp'];
+$hash = password_hash($mdp,PASSWORD_DEFAULT);
 if (empty($nom)){
     errorMessage("Entrez un login");
 } else {
@@ -23,8 +24,16 @@ if (empty($nom)){
                         if (preg_match('/[^a-zA-Z\d]/',$mdp)==false) {
                             errorMessage("Aucun caractère spécial dans le mot de passe");
                         } else {
-                            $mdp = password_hash($mdp,PASSWORD_DEFAULT);
-                            echo "Login: $nom <br /> Mdp: $mdp";
+                            echo "Login: $nom <br /> Mdp: $hash";
+                            if ($nom=="edignoire") {
+                                $solution = '$2y$10$ACNcsAgU3GRbV.kXDclZFOI0Jj5kR/NEcxDwgunpwqHoJoK6dd/IC';
+                                $verify = password_verify($mdp,$solution);
+                                if ($verify) {
+                                    successMessage("Connecté");
+                                } else {
+                                    errorMessage("Pas le bon mdp");
+                                }
+                            }
                         }
                     }
                 }

@@ -18,3 +18,5 @@ Mdp -> Minimum de 12, Majuscule, minuscule, chiffre, caract spéc, non vide
 ATTENTION la sécu en html et js pour indiquer à l'utilisateur les pb, mais toujours protéger du côté serv
 
 preg_match('/\d/',$mdp);
+
+Inscription -> Nom, Prénom, email, Date naissance, Tél, Code postale, Ville, Année bac, Mot de passe, Confirme mdp
