@@ -23,6 +23,7 @@ if (empty($nom)){
                         if (preg_match('/[^a-zA-Z\d]/',$mdp)==false) {
                             errorMessage("Aucun caractère spécial dans le mot de passe");
                         } else {
+                            $mdp = password_hash($mdp,PASSWORD_DEFAULT);
                             echo "Login: $nom <br /> Mdp: $mdp";
                         }
                     }
